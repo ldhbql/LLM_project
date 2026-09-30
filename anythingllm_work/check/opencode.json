@@ -1,0 +1,15 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "anythingllm": {
+      "type": "local",
+      "command": [
+        "E:/LLM/anythingllm_work/check/.venv/Scripts/python.exe",
+        "-m",
+        "anythingllm_mcp"
+      ],
+      "cwd": "E:/LLM/anythingllm_work/check",
+      "enabled": true
+    }
+  }
+}

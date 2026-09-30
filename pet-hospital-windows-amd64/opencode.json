@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "pet-hospital": {
+      "type": "local",
+      "command": [
+        "E:\\pet-hospital-windows-amd64\\petmcp\\.venv\\Scripts\\python.exe",
+        "-m",
+        "petmcp"
+      ],
+      "enabled": true,
+      "environment": {
+        "PET_API_URL": "http://127.0.0.1:8080"
+      }
+    }
+  }
+}
