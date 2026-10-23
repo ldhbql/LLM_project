@@ -18,7 +18,7 @@
 ## 安装
 
 ```bat
-cd E:\pet-hospital-windows-amd64\petmcp
+cd E:\LLM\PetHospitalMCP\petmcp
 py -m venv .venv
 .venv\Scripts\python.exe -m pip install -e ".[dev]"
 ```
@@ -50,7 +50,7 @@ stdout 只输出 JSON-RPC 帧，日志一律走 stderr。MCP Client 关闭 stdin
 {
   "mcpServers": {
     "pet-hospital": {
-      "command": "E:\\pet-hospital-windows-amd64\\petmcp\\.venv\\Scripts\\python.exe",
+      "command": "E:\\LLM\\PetHospitalMCP\\petmcp\\.venv\\Scripts\\python.exe",
       "args": ["-m", "petmcp"],
       "env": { "PET_API_URL": "http://127.0.0.1:8080" }
     }
@@ -66,7 +66,7 @@ opencode（`opencode.json`）：
   "mcp": {
     "pet-hospital": {
       "type": "local",
-      "command": ["E:\\pet-hospital-windows-amd64\\petmcp\\.venv\\Scripts\\python.exe", "-m", "petmcp"],
+      "command": ["E:\\LLM\\PetHospitalMCP\\petmcp\\.venv\\Scripts\\python.exe", "-m", "petmcp"],
       "enabled": true
     }
   }

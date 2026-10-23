@@ -4,7 +4,7 @@
     "pet-hospital": {
       "type": "local",
       "command": [
-        "E:\\pet-hospital-windows-amd64\\petmcp\\.venv\\Scripts\\python.exe",
+        "E:\\LLM\\PetHospitalMCP\\petmcp\\.venv\\Scripts\\python.exe",
         "-m",
         "petmcp"
       ],

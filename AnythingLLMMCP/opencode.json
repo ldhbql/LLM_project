@@ -4,11 +4,11 @@
     "anythingllm": {
       "type": "local",
       "command": [
-        "E:/LLM/anythingllm_work/check/.venv/Scripts/python.exe",
+        "E:/LLM/AnythingLLMMCP/.venv/Scripts/python.exe",
         "-m",
         "anythingllm_mcp"
       ],
-      "cwd": "E:/LLM/anythingllm_work/check",
+      "cwd": "E:/LLM/AnythingLLMMCP",
       "enabled": true
     }
   }

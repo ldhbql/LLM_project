@@ -83,11 +83,11 @@ uv run mcp dev src/anythingllm_mcp/server.py
     "anythingllm": {
       "type": "local",
       "command": [
-        "E:/LLM/anythingllm_work/check/.venv/Scripts/python.exe",
+        "E:/LLM/AnythingLLMMCP/.venv/Scripts/python.exe",
         "-m",
         "anythingllm_mcp"
       ],
-      "cwd": "E:/LLM/anythingllm_work/check",
+      "cwd": "E:/LLM/AnythingLLMMCP",
       "enabled": true
     }
   }
@@ -102,7 +102,7 @@ uv run mcp dev src/anythingllm_mcp/server.py
 {
   "mcpServers": {
     "anythingllm": {
-      "command": "E:/LLM/anythingllm_work/check/.venv/Scripts/python.exe",
+      "command": "E:/LLM/AnythingLLMMCP/.venv/Scripts/python.exe",
       "args": ["-m", "anythingllm_mcp"],
       "env": {
         "ANYTHINGLLM_BASE_URL": "http://localhost:3001",
@@ -120,7 +120,7 @@ uv run mcp dev src/anythingllm_mcp/server.py
 
 ```json
 {
-  "command": "E:/LLM/anythingllm_work/check/.venv/Scripts/python.exe",
+  "command": "E:/LLM/AnythingLLMMCP/.venv/Scripts/python.exe",
   "args": ["-m", "anythingllm_mcp"],
   "env": {
     "ANYTHINGLLM_BASE_URL": "http://localhost:3001",
@@ -130,7 +130,7 @@ uv run mcp dev src/anythingllm_mcp/server.py
 }
 ```
 
-> 也可以使用 `uv --directory E:/LLM/anythingllm_work/check run anythingllm-mcp`，但这要求 `uv`
+> 也可以使用 `uv --directory E:/LLM/AnythingLLMMCP run anythingllm-mcp`，但这要求 `uv`
 > 已在 host 进程的 `PATH` 中。使用虚拟环境的 Python 可执行文件最稳妥。
 
 ## 工具

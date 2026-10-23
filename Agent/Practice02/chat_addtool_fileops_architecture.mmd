@@ -1,0 +1,50 @@
+flowchart TD
+    CFG["config.ini"] -->|configparser| CFGV["base_url / model / api_key"]
+
+    subgraph MAIN["主循环 __main__"]
+        IN["input: 请输入你的问题？"] --> ADDUSER["messages.append(user)"]
+        ADDUSER --> CALL["chat(messages)"]
+        CALL --> CHECK{"存在 tool_calls ?"}
+        CHECK -->|否| SAVE["messages.append(assistant 回答)"]
+        SAVE --> IN
+        CHECK -->|是| SHOW["打印 [调用工具: 名称]"]
+        SHOW --> ADDASST["messages.append(assistant + tool_calls)"]
+        ADDASST --> DISPATCH["按 TOOL_FUNCS 分发并执行工具"]
+        DISPATCH --> ADDTOOL["messages.append(tool 结果)"]
+        ADDTOOL --> CALL
+    end
+
+    subgraph CHAT["chat(messages)"]
+        REQ["POST /chat/completions stream=true"] --> STREAM["逐行解析 data: JSON"]
+        STREAM --> ACC["累积 content 实时打印 / 累积 tool_calls"]
+        ACC --> RET["返回 reply, tool_calls, finish_reason"]
+    end
+
+    subgraph TOOLMAP["工具注册"]
+        TOOLS["tools[] 12 个工具 schema"]
+        FUNCS["TOOL_FUNCS 工具名 -> 函数"]
+    end
+
+    subgraph TOOLIMPL["工具实现"]
+        PS["PowerShell 工具组"]
+        PY["Python 工具组"]
+    end
+
+    CFGV -.-> CALL
+    TOOLS -.-> REQ
+    FUNCS -.-> DISPATCH
+
+    CALL -.-> REQ
+    RET -.-> CHECK
+
+    PS -. includes .-> PSLIST["getData / getCurrentDirectory / listDirectory / getFileType / createFile / createDirectory / deleteDirectory / deleteFile / renamePath"]
+    PY -. includes .-> PYLIST["isLeapYear / readTextFile / editTextFile"]
+
+    DISPATCH -.-> PS
+    DISPATCH -.-> PY
+
+    REQ <--> API["DeepSeek API"]
+    PSLIST <--> EXT["PowerShell / 文件系统"]
+    PYLIST <--> FS["文件系统"]
+
+    PS ---> RUNPS["run_ps(cmd) + q(text) 封装"]

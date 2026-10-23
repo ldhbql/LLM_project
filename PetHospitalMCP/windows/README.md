@@ -33,7 +33,7 @@
 请从本仓库的 [GitHub Releases](../../releases) 下载与你的系统匹配的发行 ZIP。解压后结构如下：
 
 ```text
-pet-hospital-windows-amd64/
+PetHospitalMCP/
 ├── pethospital.exe     ← 可执行文件（已内嵌网页）
 ├── README.md           ← 本说明
 └── data/
@@ -41,7 +41,7 @@ pet-hospital-windows-amd64/
 ```
 
 ```bash
-cd pet-hospital-windows-amd64
+cd PetHospitalMCP
 pethospital.exe                       # Windows（双击或命令行）
 ```
 

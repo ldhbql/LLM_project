@@ -2,7 +2,7 @@
 
 单文件网页，整合四个功能：文档上传、文档树/列表、文档删除、工作区管理。
 
-- 网页文件：`../My_anythingllm_Web.html`（位于项目根目录，直接在浏览器打开）
+- 网页文件：`./My_anythingllm_Web.html`（同目录，直接在浏览器打开）
 - AnythingLLM：`http://localhost:3001`
 
 ## 功能与接口
@@ -21,7 +21,7 @@
 
 ## 使用
 
-1. 浏览器打开 `E:\LLM\anythingllm_work\My_anythingllm_Web.html`。
+1. 浏览器打开 `E:\LLM\AnythingLLMServer\My_anythingllm_Web.html`。
 2. 顶部下拉选择当前工作区（上传与“从工作区移除”使用）。
 3. 四个标签页：上传 / 文档 / 删除 / 工作区。
 
